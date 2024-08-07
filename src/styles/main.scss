@@ -1,0 +1,176 @@
+@use 'variaveis';
+@use 'header';
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+
+.container {
+    padding: 2vw 5.6vw;
+    min-height: 10vw;
+}
+
+
+.hero {
+    padding: 5.6vw;
+    min-height: 80vh;
+    background-image: url(../images/game-of-thrones.webp);
+    text-align: center;
+    background-size: cover;
+
+}
+
+p {
+    line-height: 2.5;
+}
+
+#sinopse{
+    text-align: center;
+}
+
+.cast {
+    padding: 2vw 5.6vw;
+    min-height: 20vw;
+
+    h2{
+        text-align: center;
+    }
+
+    &__list {
+        text-align: center;
+        margin-top: 44px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 24px;    
+    
+        &__item {
+            img {
+                max-width: 100%;
+                border-radius: 6px;
+                padding-bottom: 24px;
+            }
+        }
+    }    
+}
+
+.trailer {
+    text-align: center;
+
+    &__title {
+        padding-bottom: 12px;
+    }
+
+    &__subtitle {
+        padding-bottom: 24px;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+footer{
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+    .hero{
+        margin-top: 0px;
+        min-height: 30vh;
+        width: 100%;
+        background-image: url(../images/game-of-thrones.webp);
+
+        text-align: center;
+        background-size: cover;
+        
+    }
+
+    #sinopse{
+        padding-top: 25px;
+        width: 100%;
+        font-size: 12px;
+        padding-bottom: 25px;
+    }
+
+    .cast {
+        width: 100%;  /* ver se deixa 100% ou 300px????????? */
+        min-height: 20vw;
+
+        h3{
+            font-size: 14px;
+
+        }
+
+        &__list {
+            margin-top: 25px;
+            width: 100%; /* ver se deixa 100% ou 300px????????? */
+            display: grid;
+            grid-template-columns: 1fr ;
+            gap: 24px;  
+            padding-bottom: 25px;
+
+            &__item {
+                img {
+                    padding-bottom: 10px;
+                    padding-top: 20px;
+                }
+            }
+        }    
+    }
+
+    .trailer {
+        
+        width: 100%;
+
+        &__item {
+            width: 100%;          
+
+        }
+        .video-container {
+            width: 100%;
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    .hero{
+        margin-top: 0px;
+        min-height: 20vh;
+        width: 100%;
+        background-image: url(../images/game-of-thrones.webp);
+
+        text-align: center;
+        background-size: cover;
+        
+    }
+}
+
